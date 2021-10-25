@@ -33,7 +33,7 @@ const NoteItem = ({ note }) => {
 
         <div className={`absolute top-10 right-1 ${toggleCategory ? "block" : "hidden"} z-50 `}>
           <ul className={`bg-white w-48 py-2 z-50`}>
-            <CategoryMenu id={note.id} setToggleCategory={setToggleCategory} paddingLeft={"5"} />
+            <CategoryMenu id={note.id} setToggleCategory={setToggleCategory} />
           </ul>
         </div>
       </div>

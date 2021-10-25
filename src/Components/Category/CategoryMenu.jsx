@@ -3,7 +3,7 @@ import { CheckCircleIcon } from "@heroicons/react/outline";
 import uuid from "react-uuid";
 import { useRootContext } from "../../Context/RootContext";
 
-const CategoryMenu = ({ id, setToggleCategory, paddingLeft }) => {
+const CategoryMenu = ({ id, setToggleCategory }) => {
   const { addCategory, categoryList } = useRootContext();
 
   const categoryHandler = (e) => {
@@ -15,7 +15,7 @@ const CategoryMenu = ({ id, setToggleCategory, paddingLeft }) => {
     <>
       {categoryList.map((item) => (
         <li
-          className={`flex items-center justify-start pl-${paddingLeft} py-2 hover:bg-gray-100 cursor-pointer text-sm `}
+          className={`flex items-center justify-start pl-5 py-2 hover:bg-gray-100 cursor-pointer text-sm `}
           onClick={() => {
             categoryHandler(item);
           }}
