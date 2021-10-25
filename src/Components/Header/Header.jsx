@@ -1,6 +1,7 @@
-import { PlusIcon } from "@heroicons/react/outline";
 import React from "react";
 import { Link } from "react-router-dom";
+
+import { PlusIcon } from "@heroicons/react/outline";
 
 const Header = ({ notes }) => {
   return (

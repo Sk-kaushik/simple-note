@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useRootContext } from "../Context/RootContext";
+
+// COMPONENTS
 import NoteItem from "../Components/Note/NoteItem";
 import Nodata from "../Components/Nodata/Nodata";
 import Header from "../Components/Header/Header";
 
 const Category = () => {
   const { getCategories } = useRootContext();
+
   const [categoryList, setCategoryList] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // GETTING CATEGORY NAME FROM URL
   const { color } = useParams();
 
   useEffect(() => {

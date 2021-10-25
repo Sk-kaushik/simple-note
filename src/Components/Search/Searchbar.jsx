@@ -1,7 +1,8 @@
 import React from "react";
-import { SearchIcon } from "@heroicons/react/solid";
 import { useHistory } from "react-router-dom";
 import { useRootContext } from "../../Context/RootContext";
+
+import { SearchIcon } from "@heroicons/react/solid";
 
 const Search = () => {
   const { setSearchedList } = useRootContext();
@@ -11,8 +12,12 @@ const Search = () => {
     const searchString = e.target.value;
 
     if (searchString === "") {
+      // REDIRECT TO HOME PAGE WHEN SEARCH INPUT IS EMPTY
+
       history.push("/");
     } else {
+      // SHOW SEARCH COMPONENT WHEN USER TYPES IN SEARCH INPUT
+
       history.push("/search");
       setSearchedList(searchString);
     }

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import uuid from "react-uuid";
+
+import { useRootContext } from "../../Context/RootContext";
 
 import { ChevronDownIcon, SunIcon, TagIcon, CheckCircleIcon } from "@heroicons/react/outline";
-import { useRootContext } from "../../Context/RootContext";
-import uuid from "react-uuid";
 
 const Sidebar = () => {
   const { categoryList } = useRootContext();
@@ -28,8 +29,9 @@ const Sidebar = () => {
             <ChevronDownIcon className="w-5" />
           </div>
 
+          {/* CATEGORY MENU IN SIDEBAR */}
           <ul className={`flex flex-col transition-all duration-300 ease-in-out bg-gray-100 ${!toggleMenu ? "max-h-0  " : "max-h-60  "} overflow-hidden `}>
-            {categoryList.map((item, index) => (
+            {categoryList.map((item) => (
               <li className={`flex items-center justify-start hover:bg-gray-300 cursor-pointer text-sm`} key={uuid()}>
                 <NavLink to={`/category/${item}`} className="flex w-full h-full py-2  pl-14" activeClassName="bg-gray-300">
                   <CheckCircleIcon className={`w-4 text-${item}-400 mr-3`} />

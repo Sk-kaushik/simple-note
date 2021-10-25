@@ -1,9 +1,12 @@
-import { Route, Switch, Redirect } from "react-router-dom";
-import Navbar from "./Components/Navbar/Navbar";
-import Sidebar from "./Components/Sidebar/Sidebar";
-import Layout from "./Layout/Layout";
+import { Route, Switch } from "react-router-dom";
 
 import { AllNotes, Category, Note, NotFound, Search } from "./Pages";
+
+import Layout from "./Layout/Layout";
+
+// COMPONENTS
+import Navbar from "./Components/Navbar/Navbar";
+import Sidebar from "./Components/Sidebar/Sidebar";
 
 function App() {
   return (
@@ -16,23 +19,24 @@ function App() {
             <Route exact path="/">
               <AllNotes />
             </Route>
-            <Route exact path="/category">
-              <Redirect to="/category/pink" />
-            </Route>
 
             <Route exact path="/category/:color">
               <Category />
             </Route>
 
-            <Route path="/note" exact>
+            <Route exact path="/note">
               <Note />
             </Route>
+
             <Route path="/note/:id">
               <Note />
             </Route>
+
             <Route path="/search">
               <Search />
             </Route>
+
+            {/* HANDLE ROUTES WHICH wERE NOT FOUND */}
             <Route path="*">
               <NotFound />
             </Route>

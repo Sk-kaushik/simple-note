@@ -1,14 +1,31 @@
 import React from "react";
-import { CheckCircleIcon } from "@heroicons/react/outline";
 import uuid from "react-uuid";
+
+import toast from "react-hot-toast";
+
 import { useRootContext } from "../../Context/RootContext";
+
+import { CheckCircleIcon } from "@heroicons/react/outline";
 
 const CategoryMenu = ({ id, setToggleCategory }) => {
   const { addCategory, categoryList } = useRootContext();
 
+  // ADD CATEGORY TO NOTE
   const categoryHandler = (e) => {
     addCategory({ id, category: e });
     setToggleCategory((prev) => !prev);
+    toast.success(`Note is added to ${e} category.`, {
+      style: {
+        borderRadius: "2px",
+        padding: "16px",
+        color: `${e === "pink" ? "#F472B6" : e}`,
+        borderLeft: `5px solid ${e === "pink" ? "#F472B6" : e}`,
+      },
+      iconTheme: {
+        primary: `${e === "pink" ? "#F472B6" : e}`,
+        secondary: "#FFFAEE",
+      },
+    });
   };
 
   return (

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { TrashIcon, TagIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import { useRootContext } from "../../Context/RootContext";
+
+import toast from "react-hot-toast";
+
+// COMPONENT
 import CategoryMenu from "../Category/CategoryMenu";
+
+import { TrashIcon, TagIcon } from "@heroicons/react/outline";
 
 const NoteItem = ({ note }) => {
   const [toggleCategory, setToggleCategory] = useState(false);
@@ -11,6 +16,7 @@ const NoteItem = ({ note }) => {
 
   const deleteHandler = () => {
     removeNote(note.id);
+    toast.success(`Note deleted successfully.`);
   };
 
   const toggleCategoryMenu = () => {

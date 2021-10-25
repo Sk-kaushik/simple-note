@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useRootContext } from "../Context/RootContext";
-import NoteItem from "../Components/Note/NoteItem";
 
+import { Toaster } from "react-hot-toast";
+
+// COMPONENTS
+import NoteItem from "../Components/Note/NoteItem";
 import Nodata from "../Components/Nodata/Nodata";
 import Header from "../Components/Header/Header";
 
@@ -9,6 +12,7 @@ const AllNotes = () => {
   const { state } = useRootContext();
 
   const [notes, setNotes] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,6 +24,7 @@ const AllNotes = () => {
     <>
       {!loading && (
         <>
+          <Toaster position="top-right" reverseOrder={false} />
           {notes && notes.length > 0 ? (
             <>
               <Header notes={notes} />

@@ -1,6 +1,8 @@
-import { SearchIcon } from "@heroicons/react/solid";
 import React from "react";
 
+import { SearchIcon } from "@heroicons/react/solid";
+
+// SHOW WHEN NO DATA FOUND FOR SEARCH STRING
 const NoSearchFound = () => {
   return (
     <div className="flex h-4/6 flex-col justify-center items-center ">

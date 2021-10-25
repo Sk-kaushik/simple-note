@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useRootContext } from "../Context/RootContext";
+
+// COMPONENTS
 import NoSearchFound from "../Components/Nodata/NoSearchFound";
 import NoteItem from "../Components/Note/NoteItem";
-import { useRootContext } from "../Context/RootContext";
 
 const Search = () => {
   const { state, getSearchedList } = useRootContext();

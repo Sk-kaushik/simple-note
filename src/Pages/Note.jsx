@@ -40,6 +40,8 @@ const Note = () => {
   const updateHandler = () => {
     const noteTitle = title;
     const noteDes = content;
+
+    // GETTING CURRENT DATE AND TIME
     const createdAt = moment().format("MMM Do, h:mm ");
 
     if (noteTitle !== "" || noteDes !== "") {
@@ -61,19 +63,20 @@ const Note = () => {
 
       addNote(note);
 
-      toast.success("Note saved");
+      toast.success("Note saved successfully");
     }
   };
 
+  // GO BACK TO PREVIOUS PAGE WHEN CANCEL BUTTON IS CLICKED
   const cancelHandler = () => {
     history.goBack();
   };
 
   return (
     <div className="w-full flex flex-col h-5/6 sm:h-full text-gray-600 ">
+      <Toaster />
       {!loading && (
         <>
-          <Toaster />
           <div className="flex justify-between items-end sm:flex-row  flex-col">
             <input type="text" className="w-full sm:w-1/2 px-2 text-xl py-2 border-0 bg-gray-100  border-b-2 border-gray-200 outline-none capitalize" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
 

@@ -1,6 +1,7 @@
 import React from "react";
 
-const NoteFound = () => {
+// 404 PAGE
+const NotFound = () => {
   return (
     <div className="flex flex-col text-center justify-center h-4/6 items-center">
       <span className="text-8xl font-bold text-red-500 mb-5"> Oops !</span>
@@ -13,4 +14,4 @@ const NoteFound = () => {
   );
 };
 
-export default NoteFound;
+export default NotFound;
